@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>HTML/index.html</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>HTML/danh-cho-cho.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>HTML/danh-cho-meo.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>HTML/san-pham-noi-bat.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>HTML/dich-vu-spa.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>HTML/khuyen-mai.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>HTML/pettag.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>HTML/gio-hang.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>HTML/dang-nhap.html</loc>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>HTML/dang-ky.html</loc>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>HTML/lien-he.html</loc>
+    <priority>0.50</priority>
+  </url>
+
+</urlset>
