@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dành cho chó</title>
+
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/hang.css">
+    <link rel="stylesheet" href="/CSS/danh-muc.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="/images/logo.webp" alt="PetShop Logo">
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Tìm món ăn...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn">
+                    <img src="/images/tinnhan.png" class="nav-img">
+                    <span>Hỗ trợ 24/7</span>
+                    <span class="chevron">⌵</span>
+                </div>
+                <div class="dropdown-content">
+                    <p class="title-text">Nhận hỗ trợ từ các chuyên gia của chúng tôi 24/7.</p>
+
+                    <div class="support-cards-wrapper">
+                        <a href="https://zalo.me/0386559999" class="s-card chat" target="_blank">
+                            <div class="s-icon">
+                                <span class="pulse-wave"></span>
+                                <img src="/images/tinnhan.png" class="item-img">
+                            </div>
+                            <div class="s-info">
+                                <span class="s-label">Chat ngay</span>
+                                <span class="s-status">Online trực tuyến</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:0386559999" class="s-card phone">
+                            <div class="s-icon">
+                                <img src="/images/dienthoai.png" class="item-img phone-ring">
+                            </div>
+                            <div class="s-info">
+                                <span class="s-label">Gọi hotline</span>
+                                <span class="s-status">0386.559.999</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <img src="/images/dangnhap.png" class="user-avatar">
+                    <span class="btn-text">Tài khoản ⌵</span>
+                </button>
+
+                <div class="dropdown-content">
+                    <a href="dang-nhap.html" class="auth-btn login-btn">Đăng nhập</a>
+                    <a href="dang-ky.html" class="auth-btn register-btn">Tạo tài khoản</a>
+                </div>
+            </div>
+
+            <div class="nav-container">
+                <a href="gio-hang.html" class="cart-btn">
+                    <div class="cart-icon-wrapper">
+                        <span style="font-size: 24px;">🛒</span>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                    <span class="cart-label">Giỏ hàng</span>
+                </a>
+            </div>
+
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-menu">
+                <li class="has-submenu">
+                    <a href="san-pham-noi-bat.html">Sản phẩm nổi bật ⌵</a>
+                    <ul class="submenu standard-menu">
+                        <li><a href="san-pham-noi-bat.html#ban-chay">Sản phẩm bán chạy</a></li>
+                        <li><a href="san-pham-noi-bat.html#hang-moi">Hàng mới về</a></li>
+                        <li><a href="san-pham-noi-bat.html#khuyen-mai">Khuyến mãi sốc</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="danh-cho-cho.html">Dành cho chó ⌵</a>
+                    <div class="submenu mega-menu">
+                        <div class="mega-col">
+                            <span class="mega-title">Thức ăn</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#thuc-an-hat">Thức ăn hạt</a></li>
+                                <li><a href="danh-cho-cho.html#pate">Pate và thức ăn ướt</a></li>
+                                <li><a href="danh-cho-cho.html#thuc-an-tuoi">Thức ăn tươi</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Đồ ăn vặt & Thưởng</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#banh-thuong">Bánh thưởng</a></li>
+                                <li><a href="danh-cho-cho.html#thit-say">Thịt sấy khô</a></li>
+                                <li><a href="danh-cho-cho.html#thanh-gam">Thanh gặm sạch răng</a></li>
+                                <li><a href="danh-cho-cho.html#sup-thuong">Súp thưởng</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">TPCN & Dinh dưỡng</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#gel">Gel dinh dưỡng</a></li>
+                                <li><a href="danh-cho-cho.html#dau-ca">Dầu cá (Omega-3)</a></li>
+                                <li><a href="danh-cho-cho.html#canxi">Canxi & Vitamin</a></li>
+                                <li><a href="danh-cho-cho.html#men-vi-sinh">Men vi sinh</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Sữa và đồ uống</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#sua-bot">Sữa bột</a></li>
+                                <li><a href="danh-cho-cho.html#sua-tuoi">Sữa tươi tiệt trùng</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Phụ kiện</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-cho.html#bat-an">Bát ăn</a></li>
+                                <li><a href="danh-cho-cho.html#may-loc">Máy lọc nước tự động</a></li>
+                                <li><a href="danh-cho-cho.html#may-hen-gio">Máy hẹn giờ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="danh-cho-meo.html">Dành cho mèo ⌵</a>
+                    <div class="submenu mega-menu">
+                        <div class="mega-col">
+                            <span class="mega-title">Thức ăn</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#thuc-an-hat">Thức ăn hạt</a></li>
+                                <li><a href="danh-cho-meo.html#pate">Pate và thức ăn ướt</a></li>
+                                <li><a href="danh-cho-meo.html#thuc-an-tuoi">Thức ăn tươi</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Đồ ăn vặt & Thưởng</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#banh-thuong">Bánh thưởng</a></li>
+                                <li><a href="danh-cho-meo.html#thit-say">Thịt sấy khô</a></li>
+                                <li><a href="danh-cho-meo.html#thanh-gam">Thanh gặm sạch răng</a></li>
+                                <li><a href="danh-cho-meo.html#sup-thuong">Súp thưởng</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">TPCN & Dinh dưỡng</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#gel">Gel dinh dưỡng</a></li>
+                                <li><a href="danh-cho-meo.html#dau-ca">Dầu cá (Omega-3)</a></li>
+                                <li><a href="danh-cho-meo.html#canxi">Canxi & Vitamin</a></li>
+                                <li><a href="danh-cho-meo.html#men-vi-sinh">Men vi sinh</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Sữa và đồ uống</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#sua-bot">Sữa bột</a></li>
+                                <li><a href="danh-cho-meo.html#sua-tuoi">Sữa tươi tiệt trùng</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <span class="mega-title">Phụ kiện</span>
+                            <ul class="child-menu">
+                                <li><a href="danh-cho-meo.html#bat-an">Bát ăn</a></li>
+                                <li><a href="danh-cho-meo.html#may-loc">Máy lọc nước tự động</a></li>
+                                <li><a href="danh-cho-meo.html#may-hen-gio">Máy hẹn giờ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="pettag.html">Pettag ⌵</a>
+                    <ul class="submenu standard-menu">
+                        <li><a href="pettag.html#the-ten">Thẻ tên chó/mèo</a></li>
+                        <li><a href="pettag.html#vong-co">Vòng cổ khắc tên</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="dich-vu-spa.html">Dịch vụ spa ⌵</a>
+                    <ul class="submenu standard-menu">
+                        <li><a href="dich-vu-spa.html#tam-cat">Tắm & cắt spa chó/mèo</a></li>
+                        <li><a href="dich-vu-spa.html#dua-don">Dịch vụ đưa đón</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="khuyen-mai.html">Khuyến mãi ⌵</a>
+                    <ul class="submenu standard-menu">
+                        <li><a href="khuyen-mai.html#combo">Mua 1 tặng 1</a></li>
+                        <li><a href="khuyen-mai.html#dung-thu">Hàng dùng thử</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="lien-he.html">Liên hệ đặt lịch</a></li>
+                <li><span class="free-ship-btn">Miễn phí vận chuyển đơn trên 500.000đ</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-catalog">
+        <section id="thuc-an-hat" class="product-section">
+            <h1 class="section-title">THỨC ĂN DÀNH CHO CHÓ</h1>
+            <h2 class="section-title">Thức ăn hạt</h2>
+            <div class="product-grid">
+
+                <div class="food-card" data-name="Hạt Smartheart cho chó con vị Bò và Sữa" data-price="145.000đ"
+                    data-desc="Là guồn dinh dưỡng hoàn hảo cho chó con, giúp phát triển toàn diện với hương vị bò và sữa thơm ngon.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/smh.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/smh.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Hạt Smartheart cho chó con vị Bò và Sữa</h3>
+                        <p class="price">145.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Hạt Ganador cho chó vị Sữa và DHA" data-price="200.000đ"
+                    data-desc="Là guồn dinh dưỡng hoàn hảo cho chó, giúp phát triển toàn diện với hương vị sữa và DHA.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/ganador.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/ganador.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Hạt Ganador cho chó vị Sữa và DHA</h3>
+                        <p class="price">200.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Hạt Pedigree cho chó trưởng thành vị Gà và Rau củ" data-price="190.000đ"
+                    data-desc="Là guồn dinh dưỡng hoàn hảo cho chó, giúp phát triển toàn diện với hương vị gà và rau củ.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/pedigree.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/pedigree.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Hạt Pedigree cho chó trưởng thành vị Gà và Rau củ</h3>
+                        <p class="price">190.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Hạt ROYAL CANIN cho chó nhỏ" data-price="250.000đ"
+                    data-desc="Là guồn dinh dưỡng hoàn hảo cho chó, giúp phát triển toàn diện với hương vị sữa và DHA.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="https://www.petmart.vn/wp-content/uploads/2021/06/thuc-an-cho-cho-con-co-nho-royal-canin-mini-puppy1.jpg" alt="Món ăn">
+                        <img class="img-hover" src="https://www.petmart.vn/wp-content/uploads/2021/06/thuc-an-cho-cho-con-co-nho-royal-canin-mini-puppy1.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Hạt ROYAL CANIN cho chó nhỏ</h3>
+                        <p class="price">250.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Hạt ANF cho chó mọi độ tuổi" data-price="380.000đ"
+                    data-desc="Là guồn dinh dưỡng hoàn hảo cho chó, giúp phát triển toàn diện với hương vị vịt và cá hồi.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/anf.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/anf.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Hạt ANF cho chó mọi độ tuổi</h3>
+                        <p class="price">380.000đ</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="pate" class="product-section">
+            <h2 class="section-title">Pate và thức ăn ướt</h2>
+            <div class="product-grid">
+
+                <div class="food-card" data-name="Pate ROYAL CANIN" data-price="76.000đ"
+                    data-desc="Giúp phục hồi và kích thích sự thèm ăn cho chó ốm yếu, sau phẫu thuật hoặc đang trong giai đoạn hồi phục.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/1.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/1.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pate ROYAL CANIN</h3>
+                        <p class="price">76.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Pate Thức Ăn Ướt cho chó Maria" data-price="24.000đ"
+                    data-desc="bổ sung axit béo omega-3 để cải thiện các chức năng của hàng rào bảo vệ não và da cũng như prebiotics giúp cải thiện sức khỏe hệ tiêu hóa.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/2.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/2.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pate Thức Ăn Ướt cho chó Maria</h3>
+                        <p class="price">24.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Pate Thức Ăn Ướt cho chó Miratorg" data-price="23.000đ"
+                    data-desc="Pate xốt thịt gà cho tất cả giống chó trưởng thành Miratorg được làm từ thịt gà tươi ngon, giàu protein và các dưỡng chất thiết yếu giúp duy trì sức khỏe và năng lượng cho chó của bạn.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/3.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/3.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pate Thức Ăn Ướt cho chó Miratorg</h3>
+                        <p class="price">24.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Pate lon 400g A Pro bò viên nấu sốt cho chó trưởng thành" data-price="35.000đ"
+                    data-desc="Pate xốt thịt gà cho tất cả giống chó trưởng thành">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/4.webp" alt="Món ăn">
+                        <img class="img-hover" src="/images/4.webp" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pate lon 400g A Pro bò viên nấu sốt cho chó trưởng thành</h3>
+                        <p class="price">35.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Pate Alpha Pet cho cún kén ăn" data-price="45.000đ"
+                    data-desc="Kết cấu pate mềm mịn, dễ ăn, phù hợp cho những chú chó kén ăn hoặc có vấn đề về răng miệng.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/5.png" alt="Món ăn">
+                        <img class="img-hover" src="/images/5.png" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pate Alpha Pet cho cún kén ăn</h3>
+                        <p class="price">45.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Pate thức ăn ướt Monge vị thịt vịt" data-price="30.000đ"
+                    data-desc="Kết cấu pate mềm mịn, dễ ăn, phù hợp cho những chú chó kén ăn hoặc có vấn đề về răng miệng.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/6.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/6.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pate thức ăn ướt Monge vị thịt vịt</h3>
+                        <p class="price">30.000đ</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="thuc-an-tuoi" class="product-section">
+            <h2 class="section-title">Thức ăn tươi</h2>
+            <div class="product-grid">
+
+                <div class="food-card" data-name="Thức ăn tươi Rawfood cho chó" data-price="80.000đ"
+                    data-desc="Xúc xích tươi ngon, bổ dưỡng cho chó con và chó trưởng thành.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/7.webp" alt="Món ăn">
+                        <img class="img-hover" src="/images/7.webp" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thức ăn tươi Rawfood cho chó</h3>
+                        <p class="price">80.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Thức ăn tươi sống" data-price="60.000đ"
+                    data-desc="Thịt và trứng sống cho chó.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/8.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/8.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thức ăn tươi sống</h3>
+                        <p class="price">60.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Thức ăn tươi tự nhiên" data-price="100.000đ"
+                    data-desc="Hỗn hợp các loại thịt sống cho chó.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/9.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/9.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thức ăn tươi tự nhiên</h3>
+                        <p class="price">100.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Xúc xích tươi nạc bò xay rau củ" data-price="150.000đ"
+                    data-desc="Đầy đủ dinh dưỡng và dễ tiêu hóa.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/10.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/10.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Xúc xích tươi nạc bò xay rau củ</h3>
+                        <p class="price">150.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Xúc xích tươi gà xay không rau" data-price="150.000đ"
+                    data-desc="Đầy đủ dinh dưỡng và dễ tiêu hóa.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/11.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/11.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Xúc xích tươi gà xay không rau</h3>
+                        <p class="price">150.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Thịt tươi Hi Raw" data-price="70.000đ"
+                    data-desc="Đầy đủ dinh dưỡng và dễ tiêu hóa.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/12.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/12.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thịt tươi Hi Raw</h3>
+                        <p class="price">70.000đ</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="banh-thuong" class="product-section">
+            <h2 class="section-title">Bánh thưởng</h2>
+            <div class="product-grid">
+
+                <div class="food-card" data-name="Bánh thưởng Luscious hỗ trợ huấn luyện" data-price="50.000đ"
+                    data-desc="Hương vị thơm ngon với mùi sữa béo ngậy, thu hút thú cưng ngay từ miếng đầu tiên.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/13.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/13.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Bánh thưởng Luscious hỗ trợ huấn luyện</h3>
+                        <p class="price">50.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Bánh thưởng sữa phô mai Sesame hỗ trợ huấn luyện" data-price="56.000đ"
+                    data-desc="Hương vị thơm ngon với mùi sữa cùng phô mai béo ngậy, thu hút thú cưng ngay từ miếng đầu tiên.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/14.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/14.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Bánh thưởng sữa phô mai Sesame hỗ trợ huấn luyện</h3>
+                        <p class="price">56.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Bánh thưởng cao cấp" data-price="100.000đ"
+                    data-desc="Snack này có mùi vị hấp dẫn, bổ sung canxi giúp chăm sóc răng miệng chó thơm hơn, phù hợp cho chó nhai gặm dễ dàng, giúp hấp thu các chất dinh dưỡng trong ngày.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/15.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/15.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Bánh thưởng cao cấp</h3>
+                        <p class="price">100.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Bánh thưởng dạng que DoggyMan" data-price="50.000đ"
+                    data-desc="Sản phẩm có nguồn gốc từ thực vật giúp thú cưng dễ tiêu hóa, bổ sung canxi giúp chăm sóc răng miệng chó thơm hơn, phù hợp cho chó nhai gặm dễ dàng, giúp hấp thu các chất dinh dưỡng trong ngày.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/16.png" alt="Món ăn">
+                        <img class="img-hover" src="/images/16.png" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Bánh thưởng dạng que DoggyMan</h3>
+                        <p class="price">50.000đ</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="thit-say" class="product-section">
+            <h2 class="section-title">Thịt sấy khô</h2>
+            <div class="product-grid">
+
+                <div class="food-card" data-name="Thịt gà sấy khô" data-price="170.000đ"
+                    data-desc="Thịt gà tươi ngon được sấy khô giữ nguyên hương vị và dinh dưỡng, là món ăn vặt lý tưởng cho chó.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/17.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/17.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thịt gà sấy khô</h3>
+                        <p class="price">170.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Thịt ức gà sấy khô" data-price="170.000đ"
+                    data-desc="Thịt gà tươi ngon được sấy khô giữ nguyên hương vị và dinh dưỡng, là món ăn vặt lý tưởng cho chó.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/18.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/18.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thịt ức gà sấy khô</h3>
+                        <p class="price">170.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Thịt cá hú sấy khô" data-price="200.000đ"
+                    data-desc="Thịt cá hú tươi ngon được sấy khô giữ nguyên hương vị và dinh dưỡng, là món ăn vặt lý tưởng cho chó.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/19.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/19.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thịt cá hú sấy khô</h3>
+                        <p class="price">200.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Thịt sấy tổng hợp" data-price="100.000đ"
+                    data-desc="Thịt heo, bò, gà tươi ngon được sấy khô giữ nguyên hương vị và dinh dưỡng, là món ăn vặt lý tưởng cho chó.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/20.webp" alt="Món ăn">
+                        <img class="img-hover" src="/images/20.webp" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thịt sấy tổng hợp</h3>
+                        <p class="price">200.000đ</p>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Thịt cá hồi sấy" data-price="170.000đ"
+                    data-desc="Thịt cá hồi tươi ngon được sấy khô giữ nguyên hương vị và dinh dưỡng, là món ăn vặt lý tưởng cho chó.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/21.webp" alt="Món ăn">
+                        <img class="img-hover" src="/images/21.webp" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Thịt cá hồi sấy</h3>
+                        <p class="price">170.000đ</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="thanh-gam" class="product-section">
+            <h2 class="section-title">Thanh gặm sạch răng</h2>
+            <div class="product-grid">
+
+                <div class="food-card" data-name="Xương gặm sạch răng chó Orgo" data-price="90.000đ"
+                    data-desc="Vị Sữa: sử dụng sữa cao cấp làm thành phần giúp đảm bảo xương gặm Orgo high calcium milk flavor có hàm lượng canxi cao.">
+                    <div class="image-wrapper">
+                        <img class="img-main" src="/images/22.jpg" alt="Món ăn">
+                        <img class="img-hover" src="/images/22.jpg" alt="Chi tiết">
+                    </div>
+                    <div class="card-info">
+                        <h3>Xương gặm sạch răng chó Orgo</h3>
+                        <p class="price">90.000đ</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="/JS/jquery.min.js"></script>
+    <script src="/JS/bootstrap.bundle.min.js"></script>
+    <script src="/JS/danh-muc.js"></script>
+</body>
+
+</html>
